@@ -1,0 +1,3 @@
+[submodule "3rd_parties/LIBERO"]
+	path = 3rd_parties/LIBERO
+	url = git@github.com:Lifelong-Robot-Learning/LIBERO.git
