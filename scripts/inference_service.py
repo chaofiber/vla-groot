@@ -17,10 +17,17 @@ import argparse
 import os
 import sys
 
-import numpy as np
+# Get the absolute path to the project root (one level up from this script)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
+# Add it to sys.path if it's not already there
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+import numpy as np
+from config.data_config import DATA_CONFIG_MAP
 from gr00t.eval.robot import RobotInferenceClient, RobotInferenceServer
-from gr00t.experiment.data_config import DATA_CONFIG_MAP
+# from gr00t.experiment.data_config import DATA_CONFIG_MAP
 from gr00t.model.policy import Gr00tPolicy
 BASE = os.path.dirname(__file__)   # .../Isaac-GR00T/scripts
 LIBERO = os.path.abspath(os.path.join(BASE, "../sim/libero"))
@@ -34,7 +41,7 @@ if __name__ == "__main__":
         "--model_path",
         type=str,
         help="Path to the model checkpoint directory.",
-        default="nvidia/GR00T-N1-2B",
+        default="nvidia/GR00T-N1.5-3B",
     )
     parser.add_argument(
         "--embodiment_tag",

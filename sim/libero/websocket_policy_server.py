@@ -2,7 +2,7 @@ import asyncio
 import logging
 import traceback
 from gr00t.model.policy import unsqueeze_dict_values, squeeze_dict_values
-from gr00t.model.gr00t_n1 import GR00T_N1
+# from gr00t.model.gr00t_n1 import GR00T_N1
 import tree
 import numpy as np
 from openpi_client import base_policy as _base_policy
